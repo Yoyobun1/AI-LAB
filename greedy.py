@@ -44,32 +44,6 @@ def greedy_bfs(start, goal, graph, heu):
                 queue.append(neighbour)
                 
     print("Goal not reachable")
-        
-    
-    queue = deque([start])
-    visited = set()
-    
-    while queue:
-        
-        current_node = queue.popleft()
-        
-        if current_node in visited:
-            continue
-        
-        print(f"current node: {current_node}") 
-        visited.add(current_node)
-        
-        if current_node == goal:        
-            print("Goal reached")
-            return
-        
-        sorted_graph = sorted(graph[current_node], key=get_heu)
-        
-        for neighbours in sorted_graph:
-            if neighbours not in visited:
-                queue.append(neighbours)
-                
-    print("Goal not reachable")
 
         
     # Perform Greedy BFS
